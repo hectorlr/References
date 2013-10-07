@@ -1,0 +1,8 @@
+add person Sam
+add person Joe
+add person Bob
+add reference Sam Joe highly recommended
+add reference Sam Bob recommended
+add reference Bob Joe do not recommend
+change reference Sam Joe do not recommend
+

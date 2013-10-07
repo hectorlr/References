@@ -1,0 +1,8 @@
+<h2><label>Input a name for your file</label> :</h2>
+
+  <%= form_tag({:action => 'download'},
+               :multipart => true) do %>
+      <%= text_field(:post, :fileName, :size => 20) %>
+      <%= submit_tag "Download" %>
+  <% end %>
+
