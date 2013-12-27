@@ -10,17 +10,17 @@ class UploadController < ApplicationController
 
   def onUpload
     if !params[:upload].nil?
-      uploaded_io = params[:upload]['datafile']
+      uploaded_io = params[:upload][:datafile]
       puts(uploaded_io)
-      File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), "w+") do |file|
+      File.open(Rails.root.join('public', 'uploads', 'GraphDocTemp.txt'), 'w+') do |file|
 
         file.write(uploaded_io.read)
         file.close
-        @fileOuput = File.open(file.path).read
-        matrix = AdjacencyMatrix.new
-        lines = IO.readlines(file.path)
+        lines = []
+        File.open(file.path, 'rb').each_line do |line|
+          lines.push(line.strip)
+        end
         matrix.buildGraph(lines)
-        @fileOuput = matrix.adjacencyMatrix
       end
     else
       render 'upload/index'

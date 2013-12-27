@@ -48,5 +48,4 @@ gem 'carrierwave'
 
 gem 'mongo'
 
-gem 'rails_12factor', group: :production
 

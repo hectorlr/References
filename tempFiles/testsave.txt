@@ -25,4 +25,7 @@ add reference Joe Mark highly recommended
 add reference Joe Sam recommended
 add reference Mike Tony highly recommended
 add reference Bob Joe do not recommend
-add person hector
+delete reference mark mike
+delete person sally
+add person gurka
+add reference gurka bob do not recommend

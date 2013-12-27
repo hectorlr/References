@@ -1,0 +1,36 @@
+<h1>Update</h1>
+<h2>Add a New Person</h2>
+<%= form_tag(controller: :update, action: :addPerson,
+             :multipart => true) do %>
+    <label>Name </label><%= text_field(:post, :addName, :size => 20) %>
+    <%= submit_tag 'Add a New Person' %>
+<% end %>
+<h2>Delete a Person</h2>
+<%= form_tag(controller: :update, action: :deletePerson,
+             :multipart => true) do %>
+    <label>Name </label><%= text_field(:post, :deleteName, :size => 20) %>
+    <%= submit_tag 'Delete a Person' %>
+<% end %>
+<h2>Add a Reference</h2>
+<%= form_tag({:action => 'addReference'},
+             :multipart => true) do |f|%>
+    <label>Referer </label><%= text_field(:post, :addRefererName, :size => 20) %>
+    <label>Refered </label><%= text_field(:post, :addReferedName, :size => 20) %>
+    <label>Level </label><%= select_tag :addReference, options_for_select([['Highly Recommended','highly recommended'],['Recommended','recommended'],['Do Not Recommend','do not recommend']]) %>
+    <%= submit_tag 'Add a Reference' %>
+<% end %>
+<h2>Delete a Reference</h2>
+<%= form_tag({:action => 'deleteReference'},
+             :multipart => true) do %>
+    <label>Referer </label><%= text_field(:post, :deleteRefererName, :size => 20) %>
+    <label>Refered </label><%= text_field(:post, :deleteReferedName, :size => 20) %>
+    <%= submit_tag 'Delete a Reference' %>
+<% end %>
+<h2>Change a Reference</h2>
+<%= form_tag({:action => 'changeReference'},
+             :multipart => true) do |f|%>
+    <label>Referer </label><%= text_field(:post, :changeRefererName, :size => 20) %>
+    <label>Refered </label><%= text_field(:post, :changeReferedName, :size => 20) %>
+    <label>Level </label><%= select_tag :changeReference, options_for_select([['Highly Recommended','highly recommended'],['Recommended','recommended'],['Do Not Recommend','do not recommend']]) %>
+    <%= submit_tag 'Change a Reference' %>
+<% end %>

@@ -3,5 +3,15 @@
 
 
 <h2><label>Select an option</label> : </h2>
-  <%= button_to("Upload Graph File", upload_path()) %><br/>
-  <%= button_to('Output Graph File', download_path()) %>
+<%= button_to('Upload Input File', upload_path()) %>
+<br/>
+<%= button_to('Download Input File', download_path()) %>
+<br/>
+<%= button_to('Update References', update_path()) %>
+<br/>
+<%= button_to('View Information', information_path()) %>
+<br/>
+<%= form_tag(controller: :home, action: :downloadErrorFile,
+             :multipart => true) do %>
+    <%= submit_tag "Download Error File" %>
+<% end %>

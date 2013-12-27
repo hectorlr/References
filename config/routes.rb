@@ -7,12 +7,38 @@ References::Application.routes.draw do
 
    get '/download', to: 'download#index'
    post '/download', to: 'download#index'
-   post :action=>'download', :controller=>'download'
+
    get '/upload', to: 'upload#index'
    post '/upload', to: 'upload#index'
-   post :action=>'onUpload', :controller=>'upload'
+
+   get '/update', to: 'update#index'
+   post '/update', to: 'update#index'
+
+   get '/information', to: 'information#index'
+   post '/information', to: 'information#index'
+
+   resources :download do
+     post :download, on: :collection
+   end
+
+   resources :home do
+     post :downloadErrorFile, on: :collection
+   end
+
+   resources :information do
+     post :downloadInformationFile, on: :collection
+   end
+
+   resources :update do
+     post :addPerson, on: :collection
+     post :deletePerson, on: :collection
+     post :addReference, on: :collection
+     post :deleteReference, on: :collection
+     post :changeReference, on: :collection
+   end
+
    # Example of regular route:
-    #get :action=>'upload', :controller=>'upload'
+    post :action=>'onUpload', :controller=>'upload'
 
 
 

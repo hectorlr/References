@@ -1,0 +1,70 @@
+<h1>Information</h1>
+
+<table>
+  <tr>
+    <th>About Each Person</th>
+  </tr>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Highly Recommended By</th>
+          <th>Recommended By</th>
+          <th>Do Not Recommend By</th>
+        </tr>
+        <tr>
+          <%= @about.html_safe %>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th>Written By Each Person</th>
+  </tr>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Highly Recommended</th>
+          <th>Recommended</th>
+          <th>Do Not Recommend</th>
+        </tr>
+        <tr>
+          <%= @written.html_safe %>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <th>Statistics</th>
+  </tr>
+  <tr>
+    <td>
+      <%= @stats.html_safe %>
+    </td>
+  </tr>
+  <tr>
+    <th>Highly Recommended People</th>
+  </tr>
+  <tr>
+    <td>
+      <%= @highly.html_safe %>
+    </td>
+  </tr>
+  <tr>
+    <th>Top Candidate</th>
+  </tr>
+  <tr>
+    <td>
+      <%= @top.html_safe %>
+    </td>
+  </tr>
+</table>
+
+<br/>
+<%= form_tag(controller: :information, action: :downloadInformationFile,
+             :multipart => true) do %>
+    <%= submit_tag "Download Information File" %>
+<% end %>

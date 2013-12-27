@@ -1,0 +1,22 @@
+
+add person Sue
+
+add person Todd
+
+add person Hector
+
+delete person Todd
+add person Todd
+delete person Todd
+add person Sam
+add person Joe
+add person Bob
+add reference Sam Joe highly recommended
+add reference Sam Bob recommended
+add reference Bob Joe do not recommend
+change reference Sam Joe do not recommend
+add person Todd
+delete person Todd
+add person Todd
+delete person Todd
+change reference Sam Joe do not recommend
